@@ -35,12 +35,13 @@ menu.addEventListener('click', (event) => {
     if (parentButton) {
         const name = parentButton.getAttribute('data-name');
         const price = parseFloat(parentButton.getAttribute('data-price'));
+        const image = parentButton.getAttribute('data-image');
 
-        addToCart(name, price);
+        addToCart(name, price, image);
     }
 });
 
-function addToCart(name, price) {
+function addToCart(name, price, image) {
     const existingItem = cart.find(item => item.name === name);
 
     if (existingItem) {
@@ -50,7 +51,8 @@ function addToCart(name, price) {
         cart.push({
             name,
             price,
-            quantity: 1
+            quantity: 1,
+            image
         });
     }
 
@@ -60,7 +62,7 @@ function addToCart(name, price) {
 function updateCartModal() {
     cartItemsContainer.innerHTML = "";
 
-    let total = 0; 
+    let total = 0;
 
     cart.forEach(item => {
         const cartItemElement = document.createElement('div');
@@ -68,15 +70,18 @@ function updateCartModal() {
 
         cartItemElement.innerHTML = `
             <div class="flex items-center justify-between">
-                <div>
-                    <p class="font-medium">${item.name}</p>
-                    <p>Qtd: ${item.quantity}</p>
-                    <p class="font-medium mt-2">R$ ${item.price.toFixed(2)}</p>
+                <div class="flex items-center gap-4">
+                    <img src="${item.image}" class="w-12 h-12 rounded-md" alt="${item.name}">
+                    <div>
+                        <p class="font-medium">${item.name}</p>
+                        <p>Qtd: ${item.quantity}</p>
+                        <p class="font-medium mt-2">R$ ${item.price.toFixed(2)}</p>
+                    </div>
                 </div>
 
                 
                 <button 
-                    class="remove-from-cart-btn"
+                    class="remove-from-cart-btn bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700"
                     data-name="${item.name}"
                 >
                     Remover
@@ -127,7 +132,7 @@ function removeItemCart(name) {
 }
 
 addressInput.addEventListener("input", (event) => {
-    let inputValue= event.target.value;
+    let inputValue = event.target.value;
 
     if (inputValue !== "") {
         addressInput.classList.remove("border-red-500");
@@ -197,7 +202,7 @@ checkoutBtn.addEventListener("click", () => {
 function checkRestaurantOpen() {
     const date = new Date();
     const hour = date.getHours();
-    
+
     return hour >= 18 && hour < 22;
 }
 
