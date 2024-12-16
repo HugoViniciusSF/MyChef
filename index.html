@@ -209,7 +209,7 @@
     <!-- MODAL CART -->
     <div class="bg-black/60 w-full h-full fixed top-0 left-0 z-[99] items-center justify-center hidden" id="cart-modal">
 
-        <div class="bg-white p-5 rounded-md min-w-[90%] md:mim-w-[600px]">
+        <div class="bg-white p-5 rounded-md min-w-[50%] md:mim-w-[600px]">
             <h2 class="text-center font-bold text-2xl">Meu carrinho</h2>
 
             <div id="cart-items" class="flex flex-col justify-between mb-2"></div>
@@ -233,14 +233,13 @@
     <!-- FIM MODAL CART -->
 
     <!-- BUTTON CART FOOTER -->
-    <footer
-        class="w-full bg-red-600 py-3 fixed bottom-0 z-40 flex items-center justify-center hover:bg-red-700 duration-300">
-        <button class="w-full flex items-center justify-center text-white font-bold" id="cart-btn">
-            (<span id="cart-count">0</span>)
-            Veja meu carrinho
-            <i class="fa fa-cart-plus text-lg text-white"></i>
-        </button>
-    </footer>
+    <footer class="hidden"></footer>
+
+    <button id="cart-btn"
+        class="fixed bottom-5 right-5 bg-red-500 w-40 h-16 rounded-md flex items-center justify-center text-white text-xl hover:bg-red-600 shadow-lg duration-300">
+        <span id="cart-count" class="pr-2">0</span>
+        <i class="fa fa-cart-plus"></i>
+    </button>
     <!-- FIM BUTTON CART FOOTER -->
 
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
