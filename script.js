@@ -171,7 +171,7 @@ checkoutBtn.addEventListener("click", () => {
         return;
     }
 
-    // Send order to wahtsapp API
+    // zapzap api
     const cartItems = cart.map(item => {
         return (
             ` ${item.name} Quantidade: (${item.quantity}) Preço: R$ ${item.price} |`
@@ -179,9 +179,9 @@ checkoutBtn.addEventListener("click", () => {
     }).join("");
 
     const message = encodeURIComponent(cartItems);
-    const phone = "65999999999";
+    const phone = "40028922"; 
 
-    // window.open(`https://wa.me/${phone}?text=${message} Endereço: ${addressInput.value}`, "_blank");
+    window.open(`https://wa.me/${phone}?text=${message} Endereço: ${addressInput.value}`, "_blank");
 
     cart = [];
     updateCartModal();
@@ -203,7 +203,7 @@ function checkRestaurantOpen() {
     const date = new Date();
     const hour = date.getHours();
 
-    return hour >= 18 && hour < 22;
+    return hour >= 18 && hour < 23;
 }
 
 const spanItem = document.querySelector('#date-span');
