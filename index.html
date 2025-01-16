@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -7,240 +7,229 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:wght@400;500;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-        integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 
-    <link rel="stylesheet" href="./styles/output.css">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-    <title>MyChef - Inovando a forma de pedir comida</title>
+    <title>MyChef - Sabor e Inovação em Cada Prato</title>
 </head>
 
-<body>
+<body class="bg-gray-100">
 
-    <!-- HEADER  -->
-    <header class="w-full h-[420px] bg-zinc-900 bg-home bg-cover bg-center">
-        <div class="w-full h-full flex flex-col justify-center items-center">
-            <img src="./assets/Mychef.png" alt="Logo MyChef"
-                class="w-32 h-32 rounded-full shadow-lg hover:scale-110 duration-200" />
-            <h1 class="text-4xl mt-4 mb-2 font-bold text-white">
+    <!-- CABEÇALHO -->
+    <header class="w-full h-[450px] bg-gray-800 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80');">
+        <div class="w-full h-full flex flex-col justify-center items-center backdrop-blur-sm bg-black/30">
+            <img src="assets\Mychef.png" alt="Logo MyChef" class="w-36 h-36 rounded-full shadow-xl hover:scale-105 transition-transform duration-300" />
+            <h1 class="text-5xl mt-5 mb-3 font-bold text-white">
                 MyChef
             </h1>
 
-            <span class="text-white font-medium">Av. Cap. Mor Gouveia, Lagoa Nova, Natal - RN</span>
+            <span class="text-white font-medium text-lg">Av. Cap. Mor Gouveia, Lagoa Nova, Natal - RN</span>
 
-            <div class="bg-blue-600 px-4 py-1 rounded-lg mt-5" id="date-span">
-                <spanv class="text-white font-medium">Seg à Dom - 18:00 as 23:00</span>
+            <div class="bg-green-600 px-6 py-2 rounded-full mt-6" id="horario">
+                <span class="text-white font-semibold">Segunda a Domingo - 18h às 23h</span>
             </div>
-
         </div>
     </header>
-    <!-- FIM HEADER -->
+    <!-- FIM CABEÇALHO -->
 
-    <h2 class="text-2xl md:text-3xl font-bold text-center mt-9 mb-6">
-        Conheça o nosso menu
+    <h2 class="text-3xl md:text-4xl font-bold text-center mt-12 mb-8 text-gray-800">
+        Descubra Nosso Cardápio
     </h2>
 
-    <!-- INICIO MENU -->
-    <div id="menu">
+    <!-- INÍCIO CARDÁPIO -->
+    <div id="cardapio">
 
-        <main class="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-10 mx-auto max-w-7xl px-2 mb-16">
+        <main class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mx-auto max-w-6xl px-4 mb-20">
 
-            <!-- PRODUTO ITEM -->
-            <div class="flex gap-2">
-                <img src="./assets/hamb-1.png" alt="Hamburguer Smash"
-                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300" />
+            <!-- ITEM DO CARDÁPIO -->
+            <div class="flex gap-4 bg-white p-4 rounded-lg shadow-md">
+                <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Clássico Gourmet"
+                    class="w-32 h-32 rounded-md object-cover hover:scale-105 hover:rotate-3 transition-all duration-300" />
 
-                <div>
-                    <p class="font-bold">Hamburguer Smash</p>
-                    <p class="text-sm">Pão leve, hamburguer de 200g, queijo, tomate, alface e molho especial</p>
+                <div class="flex flex-col justify-between">
+                    <div>
+                        <p class="font-bold text-xl text-gray-800">Clássico Gourmet</p>
+                        <p class="text-sm text-gray-600">Blend suculento, queijo cheddar, alface crocante e nosso molho secreto</p>
+                    </div>
 
-                    <div class="flex items-center gap-2 justify-between mt-3">
-                        <p class="font-bold text-lg">R$18.90</p>
+                    <div class="flex items-center justify-between mt-3">
+                        <p class="font-bold text-lg text-green-600">R$22,90</p>
                         <button
-                            class="bg-blue-600 px-5 rounded add-to-cart-btn hover:bg-blue-700 hover:scale-105 hover:shadow-lg duration-300"
-                            data-name="Hamburguer Smash" data-price="18.90" data-image="./assets/hamb-1.png">
+                            class="bg-blue-600 px-4 py-2 rounded-full add-to-cart-btn hover:bg-blue-700 hover:scale-105 transition-all duration-300"
+                            data-name="Clássico Gourmet" data-price="22.90" data-image="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80">
                             <i class="fa fa-cart-plus text-lg text-white"></i>
                         </button>
                     </div>
-
                 </div>
-
             </div>
-            <!-- FIM PRODUTO ITEM -->
+            <!-- FIM ITEM DO CARDÁPIO -->
 
-            <!-- PRODUTO ITEM -->
-            <div class="flex gap-2">
-                <img src="./assets/hamb-2.png" alt="Hamburguer Duplo"
-                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300" />
+            <!-- ITEM DO CARDÁPIO -->
+            <div class="flex gap-4 bg-white p-4 rounded-lg shadow-md">
+                <img src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" alt="Duo Explosão"
+                    class="w-32 h-32 rounded-md object-cover hover:scale-105 hover:rotate-3 transition-all duration-300" />
 
-                <div>
-                    <p class="font-bold">Hamburguer Duplo</p>
-                    <p class="text-sm">Pão leve, hamburguer de 200g, queijo, tomate, alface e molho especial</p>
+                <div class="flex flex-col justify-between">
+                    <div>
+                        <p class="font-bold text-xl text-gray-800">Duo Explosão</p>
+                        <p class="text-sm text-gray-600">Dois blends, bacon crocante, cebola caramelizada e molho especial</p>
+                    </div>
 
-                    <div class="flex items-center gap-2 justify-between mt-3">
-                        <p class="font-bold text-lg">R$32.90</p>
+                    <div class="flex items-center justify-between mt-3">
+                        <p class="font-bold text-lg text-green-600">R$34,90</p>
                         <button
-                            class="bg-blue-600 px-5 rounded add-to-cart-btn hover:bg-blue-700 hover:scale-105 hover:shadow-lg duration-300"
-                            data-name="Hamburguer Duplo" data-price="32.90" data-image="./assets/hamb-2.png">
+                            class="bg-blue-600 px-4 py-2 rounded-full add-to-cart-btn hover:bg-blue-700 hover:scale-105 transition-all duration-300"
+                            data-name="Duo Explosão" data-price="34.90" data-image="https://images.unsplash.com/photo-1586190848861-99aa4a171e90?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80">
                             <i class="fa fa-cart-plus text-lg text-white"></i>
                         </button>
                     </div>
-
                 </div>
-
             </div>
-            <!-- FIM PRODUTO ITEM -->
+            <!-- FIM ITEM DO CARDÁPIO -->
 
+            <!-- ITEM DO CARDÁPIO -->
+            <div class="flex gap-4 bg-white p-4 rounded-lg shadow-md">
+                <img src="https://images.unsplash.com/photo-1625937286074-9ca519d5d9df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Veggie Supreme"
+                    class="w-32 h-32 rounded-md object-cover hover:scale-105 hover:rotate-3 transition-all duration-300" />
 
-            <!-- PRODUTO ITEM -->
-            <div class="flex gap-2">
-                <img src="./assets/hamb-3.png" alt="Hamburguer Salad"
-                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300" />
+                <div class="flex flex-col justify-between">
+                    <div>
+                        <p class="font-bold text-xl text-gray-800">Veggie Supreme</p>
+                        <p class="text-sm text-gray-600">Hambúrguer de grão-de-bico, rúcula, tomate e maionese vegana</p>
+                    </div>
 
-                <div>
-                    <p class="font-bold">Hamburguer Salad</p>
-                    <p class="text-sm">Pão leve, hamburguer de 200g, queijo, tomate, alface e molho especial</p>
-
-                    <div class="flex items-center gap-2 justify-between mt-3">
-                        <p class="font-bold text-lg">R$35.90</p>
+                    <div class="flex items-center justify-between mt-3">
+                        <p class="font-bold text-lg text-green-600">R$28,90</p>
                         <button
-                            class="bg-blue-600 px-5 rounded add-to-cart-btn hover:bg-blue-700 hover:scale-105 hover:shadow-lg duration-300"
-                            data-name="Hamburguer Salad" data-price="35.90" data-image="./assets/hamb-3.png">
+                            class="bg-blue-600 px-4 py-2 rounded-full add-to-cart-btn hover:bg-blue-700 hover:scale-105 transition-all duration-300"
+                            data-name="Veggie Supreme" data-price="28.90" data-image="https://images.unsplash.com/photo-1625937286074-9ca519d5d9df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80">
                             <i class="fa fa-cart-plus text-lg text-white"></i>
                         </button>
                     </div>
-
                 </div>
-
             </div>
-            <!-- FIM PRODUTO ITEM -->
+            <!-- FIM ITEM DO CARDÁPIO -->
 
-            <!-- PRODUTO ITEM -->
-            <div class="flex gap-2">
-                <img src="./assets/hamb-4.png" alt="Hamburguer da Casa"
-                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300" />
+            <!-- ITEM DO CARDÁPIO -->
+            <div class="flex gap-4 bg-white p-4 rounded-lg shadow-md">
+                <img src="https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1115&q=80" alt="Chef's Special"
+                    class="w-32 h-32 rounded-md object-cover hover:scale-105 hover:rotate-3 transition-all duration-300" />
 
-                <div>
-                    <p class="font-bold">Hamburguer da Casa</p>
-                    <p class="text-sm">Pão leve, hamburguer de 200g, queijo, tomate, alface e molho especial</p>
+                <div class="flex flex-col justify-between">
+                    <div>
+                        <p class="font-bold text-xl text-gray-800">Chef's Special</p>
+                        <p class="text-sm text-gray-600">Blend premium, queijo brie, cogumelos salteados e molho trufado</p>
+                    </div>
 
-                    <div class="flex items-center gap-2 justify-between mt-3">
-                        <p class="font-bold text-lg">R$30</p>
+                    <div class="flex items-center justify-between mt-3">
+                        <p class="font-bold text-lg text-green-600">R$39,90</p>
                         <button
-                            class="bg-blue-600 px-5 rounded add-to-cart-btn hover:bg-blue-700 hover:scale-105 hover:shadow-lg duration-300"
-                            data-name="Hamburguer da Casa" data-price="30" data-image="./assets/hamb-4.png">
+                            class="bg-blue-600 px-4 py-2 rounded-full add-to-cart-btn hover:bg-blue-700 hover:scale-105 transition-all duration-300"
+                            data-name="Chef's Special" data-price="39.90" data-image="https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1115&q=80">
                             <i class="fa fa-cart-plus text-lg text-white"></i>
                         </button>
                     </div>
-
                 </div>
-
             </div>
-            <!-- FIM PRODUTO ITEM -->
+            <!-- FIM ITEM DO CARDÁPIO -->
 
         </main>
 
-        <div class="mx-auto max-w-7xl px-2 my-2">
-            <h2 class="font-bold text-3xl">
-                Bebidas
+        <div class="mx-auto max-w-6xl px-4 my-4">
+            <h2 class="font-bold text-3xl text-gray-800">
+                Bebidas Refrescantes
             </h2>
         </div>
 
         <!-- GRID BEBIDAS -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-10 mx-auto max-w-7xl px-2 mb-16" id="menu">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mx-auto max-w-6xl px-4 mb-20" id="cardapio-bebidas">
 
-            <!-- BEBIDA ITEM -->
-            <div class="flex gap-2 w-full">
-                <img src="./assets/refri-1.png" alt="Coca Lata"
-                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300" />
+            <!-- ITEM BEBIDA -->
+            <div class="flex gap-4 bg-white p-4 rounded-lg shadow-md">
+                <img src="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Refrigerante Cola"
+                    class="w-32 h-32 rounded-md object-cover hover:scale-105 hover:rotate-3 transition-all duration-300" />
 
-                <div class="w-full">
-                    <p class="font-bold">Coca Lata</p>
+                <div class="flex flex-col justify-between w-full">
+                    <p class="font-bold text-xl text-gray-800">Refrigerante Cola</p>
 
-                    <div class="flex items-center gap-2 justify-between mt-3">
-                        <p class="font-bold text-lg">R$6</p>
+                    <div class="flex items-center justify-between mt-3">
+                        <p class="font-bold text-lg text-green-600">R$5,50</p>
                         <button
-                            class="bg-blue-600 px-5 rounded add-to-cart-btn hover:bg-blue-700 hover:scale-105 hover:shadow-lg duration-300"
-                            data-name="Coca Lata" data-price="6" data-image="./assets/refri-1.png">
+                            class="bg-blue-600 px-4 py-2 rounded-full add-to-cart-btn hover:bg-blue-700 hover:scale-105 transition-all duration-300"
+                            data-name="Refrigerante Cola" data-price="5.50" data-image="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80">
                             <i class="fa fa-cart-plus text-lg text-white"></i>
                         </button>
                     </div>
-
                 </div>
-
             </div>
-            <!-- FIM BEBIDA ITEM -->
+            <!-- FIM ITEM BEBIDA -->
 
-            <!-- BEBIDA ITEM -->
-            <div class="flex gap-2 w-full">
-                <img src="./assets/refri-2.png" alt="Guaraná Lata"
-                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300" />
+            <!-- ITEM BEBIDA -->
+            <div class="flex gap-4 bg-white p-4 rounded-lg shadow-md">
+                <img src="https://images.unsplash.com/photo-1621263764928-df1444c5e859?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Refrigerante Limão"
+                    class="w-32 h-32 rounded-md object-cover hover:scale-105 hover:rotate-3 transition-all duration-300" />
 
-                <div class="w-full">
-                    <p class="font-bold">Guaraná Lata</p>
+                <div class="flex flex-col justify-between w-full">
+                    <p class="font-bold text-xl text-gray-800">Refrigerante Limão</p>
 
-                    <div class="flex items-center gap-2 justify-between mt-3">
-                        <p class="font-bold text-lg">R$6</p>
+                    <div class="flex items-center justify-between mt-3">
+                        <p class="font-bold text-lg text-green-600">R$5,50</p>
                         <button
-                            class="bg-blue-600 px-5 rounded add-to-cart-btn hover:bg-blue-700 hover:scale-105 hover:shadow-lg duration-300"
-                            data-name="Guaraná Lata" data-price="6" data-image="./assets/refri-2.png">
+                            class="bg-blue-600 px-4 py-2 rounded-full add-to-cart-btn hover:bg-blue-700 hover:scale-105 transition-all duration-300"
+                            data-name="Refrigerante Limão" data-price="5.50" data-image="https://images.unsplash.com/photo-1621263764928-df1444c5e859?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80">
                             <i class="fa fa-cart-plus text-lg text-white"></i>
                         </button>
                     </div>
-
                 </div>
-
             </div>
-            <!-- FIM BEBIDA ITEM -->
+            <!-- FIM ITEM BEBIDA -->
 
         </div>
         <!-- FIM GRID BEBIDAS -->
 
     </div>
-    <!-- FIM MENU -->
+    <!-- FIM CARDÁPIO -->
 
-    <!-- MODAL CART -->
-    <div class="bg-black/60 w-full h-full fixed top-0 left-0 z-[99] items-center justify-center hidden" id="cart-modal">
+    <!-- MODAL CARRINHO -->
+    <div class="bg-black/70 w-full h-full fixed top-0 left-0 z-[99] items-center justify-center hidden" id="cart-modal">
 
-        <div class="bg-white p-5 rounded-md min-w-[50%] md:mim-w-[600px]">
-            <h2 class="text-center font-bold text-2xl">Meu carrinho</h2>
+        <div class="bg-white p-6 rounded-lg shadow-xl max-w-md w-full mx-4">
+            <h2 class="text-center font-bold text-2xl mb-4 text-gray-800">Meu Pedido</h2>
 
-            <div id="cart-items" class="flex flex-col justify-between mb-2"></div>
+            <div id="cart-items" class="flex flex-col gap-3 mb-4 max-h-60 overflow-y-auto"></div>
 
-            <p class="font-bold">Total: <span id="cart-total">0.00</span></p>
+            <p class="font-bold text-xl text-gray-800">Total: R$<span id="cart-total">0.00</span></p>
 
-            <p class="font-bold mt-2">Endereço de entrega:</p>
+            <p class="font-bold mt-4 text-gray-700">Endereço de Entrega:</p>
             <div class="relative w-full mt-2">
                 <input type="text" placeholder="Digite seu endereço completo..." id="address"
-                    class="w-full border-2 border-gray-300 p-2 rounded-md" />
+                    class="w-full border-2 border-gray-300 p-3 rounded-lg focus:outline-none focus:border-blue-500" />
             </div>
-            <p class="text-blue-500 hidden text-sm mt-1" id="address-warn">Digite seu endereço completo!</p>
+            <p class="text-red-500 hidden text-sm mt-1" id="address-warn">Por favor, informe seu endereço completo!</p>
 
-            <div class="flex items-center justify-between mt-5 w-full">
-                <button id="close-modal-btn">Fechar</button>
-                <button id="checkout-btn" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">Finalizar
-                    pedido</button>
+            <div class="flex items-center justify-between mt-6 w-full">
+                <button id="close-modal-btn" class="text-gray-600 hover:text-gray-800 transition-colors">Fechar</button>
+                <button id="checkout-btn" class="bg-green-500 text-white px-6 py-2 rounded-lg hover:bg-green-600 transition-all duration-300">Finalizar Pedido</button>
             </div>
         </div>
     </div>
-    <!-- FIM MODAL CART -->
+    <!-- FIM MODAL CARRINHO -->
 
-    <!-- BUTTON CART FOOTER -->
+    <!-- BOTÃO CARRINHO RODAPÉ -->
     <footer class="hidden"></footer>
 
     <button id="cart-btn"
-        class="fixed bottom-5 right-5 bg-blue-500 w-40 h-16 rounded-md flex items-center justify-center text-white text-xl hover:bg-blue-600 shadow-lg duration-300">
+        class="fixed bottom-6 right-6 bg-blue-600 w-44 h-16 rounded-full flex items-center justify-center text-white text-xl hover:bg-blue-700 shadow-lg transition-all duration-300">
         <span id="cart-count" class="pr-2">0</span>
-        <i class="fa fa-cart-plus"></i>
+        <i class="fa fa-shopping-cart"></i>
     </button>
-    <!-- FIM BUTTON CART FOOTER -->
+    <!-- FIM BOTÃO CARRINHO RODAPÉ -->
 
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="script.js"></script>

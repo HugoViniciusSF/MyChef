@@ -1,4 +1,4 @@
-const menu = document.querySelector('#menu');
+const cardapio = document.querySelector('#cardapio');
 const cartBtn = document.querySelector('#cart-btn');
 const cartModal = document.querySelector('#cart-modal');
 const cartItemsContainer = document.querySelector('#cart-items');
@@ -29,7 +29,7 @@ closeModalBtn.addEventListener('click', () => {
     cartModal.style.display = 'none';
 });
 
-menu.addEventListener('click', (event) => {
+cardapio.addEventListener('click', (event) => {
     let parentButton = event.target.closest('.add-to-cart-btn');
 
     if (parentButton) {
@@ -46,7 +46,6 @@ function addToCart(name, price, image) {
 
     if (existingItem) {
         existingItem.quantity += 1;
-
     } else {
         cart.push({
             name,
@@ -57,6 +56,18 @@ function addToCart(name, price, image) {
     }
 
     updateCartModal();
+
+    Toastify({
+        text: "Item adicionado ao carrinho",
+        duration: 3000,
+        close: true,
+        gravity: "top",
+        position: "right",
+        stopOnFocus: true,
+        style: {
+            background: "#4CAF50"
+        }
+    }).showToast();
 }
 
 function updateCartModal() {
@@ -79,7 +90,6 @@ function updateCartModal() {
                     </div>
                 </div>
 
-                
                 <button 
                     class="remove-from-cart-btn bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700"
                     data-name="${item.name}"
@@ -119,15 +129,23 @@ function removeItemCart(name) {
 
         if (item.quantity > 1) {
             item.quantity -= 1;
-
-            updateCartModal()
-
-            return;
+        } else {
+            cart.splice(index, 1);
         }
 
-        cart.splice(index, 1);
-
         updateCartModal();
+
+        Toastify({
+            text: "Item removido do carrinho",
+            duration: 3000,
+            close: true,
+            gravity: "top",
+            position: "right",
+            stopOnFocus: true,
+            style: {
+                background: "#FF5252"
+            }
+        }).showToast();
     }
 }
 
@@ -160,18 +178,15 @@ checkoutBtn.addEventListener("click", () => {
         return;
     }
 
-    if (cart.length === 0) {
-        return;
-    }
+    if (cart.length === 0) return;
 
     if (addressInput.value === "") {
         addressWarn.classList.remove("hidden");
         addressInput.classList.add("border-red-500");
-
         return;
     }
 
-    // zapzap api
+    // WhatsApp API
     const cartItems = cart.map(item => {
         return (
             ` ${item.name} Quantidade: (${item.quantity}) Preço: R$ ${item.price} |`
@@ -202,18 +217,16 @@ checkoutBtn.addEventListener("click", () => {
 function checkRestaurantOpen() {
     const date = new Date();
     const hour = date.getHours();
-
     return hour >= 18 && hour < 23;
 }
 
-const spanItem = document.querySelector('#date-span');
+const horarioSpan = document.querySelector('#horario');
 const isOpen = checkRestaurantOpen();
 
 if (isOpen) {
-    spanItem.classList.remove("bg-red-500");
-    spanItem.add("bg-green-600");
-
+    horarioSpan.classList.remove("bg-red-500");
+    horarioSpan.classList.add("bg-green-600");
 } else {
-    spanItem.classList.remove("bg-green-600");
-    spanItem.classList.add("bg-red-500");
+    horarioSpan.classList.remove("bg-green-600");
+    horarioSpan.classList.add("bg-red-500");
 }
