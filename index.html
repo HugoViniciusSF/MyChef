@@ -67,13 +67,17 @@
         <!-- Categorias -->
         <div class="flex flex-wrap justify-center gap-4 mb-8">
             <button
-                class="category-btn bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700 transition-colors duration-300">Todos</button>
+                class="category-btn bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700 transition-colors duration-300"
+                data-category="all">Todos</button>
             <button
-                class="category-btn bg-gray-200 text-gray-800 px-4 py-2 rounded-full hover:bg-gray-300 transition-colors duration-300">Hambúrgueres</button>
+                class="category-btn bg-gray-200 text-gray-800 px-4 py-2 rounded-full hover:bg-gray-300 transition-colors duration-300"
+                data-category="hamburgueres">Hambúrgueres</button>
             <button
-                class="category-btn bg-gray-200 text-gray-800 px-4 py-2 rounded-full hover:bg-gray-300 transition-colors duration-300">Bebidas</button>
+                class="category-btn bg-gray-200 text-gray-800 px-4 py-2 rounded-full hover:bg-gray-300 transition-colors duration-300"
+                data-category="bebidas">Bebidas</button>
             <button
-                class="category-btn bg-gray-200 text-gray-800 px-4 py-2 rounded-full hover:bg-gray-300 transition-colors duration-300">Promoções</button>
+                class="category-btn bg-gray-200 text-gray-800 px-4 py-2 rounded-full hover:bg-gray-300 transition-colors duration-300"
+                data-category="promocoes">Promoções</button>
         </div>
 
         <!-- Seção de Promoções -->
@@ -93,13 +97,14 @@
 
         <main class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <!-- ITEM DO CARDÁPIO -->
-            <div
-                class="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 focus-within:ring-2 focus-within:ring-blue-500">
+            <div class="item bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 focus-within:ring-2 focus-within:ring-blue-500"
+                data-category="hamburgueres">
                 <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
                     alt="Clássico Gourmet" class="w-full h-48 object-cover" />
                 <div class="p-4">
-                    <h3 class="font-bold text-xl text-gray-800 mb-2">Clássico Gourmet</h3>
-                    <p class="text-gray-600 mb-4">Blend suculento, queijo cheddar, alface crocante e nosso molho secreto
+                    <h3 class="item-title font-bold text-xl text-gray-800 mb-2">Clássico Gourmet</h3>
+                    <p class="item-description text-gray-600 mb-4">Blend suculento, queijo cheddar, alface crocante e
+                        nosso molho secreto
                     </p>
                     <div class="flex items-center justify-between mb-2">
                         <p class="font-bold text-lg text-green-600">R$22,90</p>
@@ -125,13 +130,14 @@
             <!-- FIM ITEM DO CARDÁPIO -->
 
             <!-- ITEM DO CARDÁPIO -->
-            <div
-                class="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 focus-within:ring-2 focus-within:ring-blue-500">
+            <div class="item bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 focus-within:ring-2 focus-within:ring-blue-500"
+                data-category="hamburgueres">
                 <img src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80"
                     alt="Duo Explosão" class="w-full h-48 object-cover" />
                 <div class="p-4">
-                    <h3 class="font-bold text-xl text-gray-800 mb-2">Duo Explosão</h3>
-                    <p class="text-gray-600 mb-4">Dois blends, bacon crocante, cebola caramelizada e molho especial</p>
+                    <h3 class="item-title font-bold text-xl text-gray-800 mb-2">Duo Explosão</h3>
+                    <p class="item-description text-gray-600 mb-4">Dois blends, bacon crocante, cebola caramelizada e
+                        molho especial</p>
                     <div class="flex items-center justify-between mb-2">
                         <p class="font-bold text-lg text-green-600">R$34,90</p>
                         <div class="flex items-center">
@@ -156,13 +162,14 @@
             <!-- FIM ITEM DO CARDÁPIO -->
 
             <!-- ITEM DO CARDÁPIO -->
-            <div
-                class="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 focus-within:ring-2 focus-within:ring-blue-500">
+            <div class="item bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 focus-within:ring-2 focus-within:ring-blue-500"
+                data-category="hamburgueres">
                 <img src="https://images.unsplash.com/photo-1625937286074-9ca519d5d9df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
                     alt="Veggie Supreme" class="w-full h-48 object-cover" />
                 <div class="p-4">
-                    <h3 class="font-bold text-xl text-gray-800 mb-2">Veggie Supreme</h3>
-                    <p class="text-gray-600 mb-4">Hambúrguer de grão-de-bico, rúcula, tomate e maionese vegana</p>
+                    <h3 class="item-title font-bold text-xl text-gray-800 mb-2">Veggie Supreme</h3>
+                    <p class="item-description text-gray-600 mb-4">Hambúrguer de grão-de-bico, rúcula, tomate e maionese
+                        vegana</p>
                     <div class="flex items-center justify-between mb-2">
                         <p class="font-bold text-lg text-green-600">R$28,90</p>
                         <div class="flex items-center">
@@ -187,13 +194,14 @@
             <!-- FIM ITEM DO CARDÁPIO -->
 
             <!-- ITEM DO CARDÁPIO -->
-            <div
-                class="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 focus-within:ring-2 focus-within:ring-blue-500">
+            <div class="item bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 focus-within:ring-2 focus-within:ring-blue-500"
+                data-category="hamburgueres">
                 <img src="https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1115&q=80"
                     alt="Chef's Special" class="w-full h-48 object-cover" />
                 <div class="p-4">
-                    <h3 class="font-bold text-xl text-gray-800 mb-2">Chef's Special</h3>
-                    <p class="text-gray-600 mb-4">Blend premium, queijo brie, cogumelos salteados e molho trufado</p>
+                    <h3 class="item-title font-bold text-xl text-gray-800 mb-2">Chef's Special</h3>
+                    <p class="item-description text-gray-600 mb-4">Blend premium, queijo brie, cogumelos salteados e
+                        molho trufado</p>
                     <div class="flex items-center justify-between mb-2">
                         <p class="font-bold text-lg text-green-600">R$39,90</p>
                         <div class="flex items-center">
@@ -218,13 +226,14 @@
             <!-- FIM ITEM DO CARDÁPIO -->
 
             <!-- ITEM DO CARDÁPIO -->
-            <div
-                class="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 focus-within:ring-2 focus-within:ring-blue-500">
+            <div class="item bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 focus-within:ring-2 focus-within:ring-blue-500"
+                data-category="hamburgueres">
                 <img src="https://images.unsplash.com/photo-1565299507177-b0ac66763828?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=722&q=80"
                     alt="Frango Crocante" class="w-full h-48 object-cover" />
                 <div class="p-4">
-                    <h3 class="font-bold text-xl text-gray-800 mb-2">Frango Crocante</h3>
-                    <p class="text-gray-600 mb-4">Hambúrguer de frango empanado, alface, tomate e molho especial</p>
+                    <h3 class="item-title font-bold text-xl text-gray-800 mb-2">Frango Crocante</h3>
+                    <p class="item-description text-gray-600 mb-4">Hambúrguer de frango empanado, alface, tomate e molho
+                        especial</p>
                     <div class="flex items-center justify-between mb-2">
                         <p class="font-bold text-lg text-green-600">R$26,90</p>
                         <div class="flex items-center">
@@ -249,13 +258,14 @@
             <!-- FIM ITEM DO CARDÁPIO -->
 
             <!-- ITEM DO CARDÁPIO -->
-            <div
-                class="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 focus-within:ring-2 focus-within:ring-blue-500">
+            <div class="item bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 focus-within:ring-2 focus-within:ring-blue-500"
+                data-category="hamburgueres">
                 <img src="https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80"
                     alt="Picanha Suprema" class="w-full h-48 object-cover" />
                 <div class="p-4">
-                    <h3 class="font-bold text-xl text-gray-800 mb-2">Picanha Suprema</h3>
-                    <p class="text-gray-600 mb-4">Hambúrguer de picanha, queijo provolone, rúcula e maionese de alho</p>
+                    <h3 class="item-title font-bold text-xl text-gray-800 mb-2">Picanha Suprema</h3>
+                    <p class="item-description text-gray-600 mb-4">Hambúrguer de picanha, queijo provolone, rúcula e
+                        maionese de alho</p>
                     <div class="flex items-center justify-between mb-2">
                         <p class="font-bold text-lg text-green-600">R$36,90</p>
                         <div class="flex items-center">
@@ -280,20 +290,20 @@
             <!-- FIM ITEM DO CARDÁPIO -->
         </main>
 
-        <h2 class="font-bold text-3xl text-gray-800 mt-16 mb-8">
+        <h2 id="bebidas-header" class="font-bold text-3xl text-gray-800 mt-16 mb-8">
             Bebidas Refrescantes
         </h2>
 
         <!-- GRID BEBIDAS -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="cardapio-bebidas">
             <!-- ITEM BEBIDA -->
-            <div
-                class="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 focus-within:ring-2 focus-within:ring-blue-500">
+            <div class="item bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 focus-within:ring-2 focus-within:ring-blue-500"
+                data-category="bebidas">
                 <img src="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
                     alt="Refrigerante Cola" class="w-full h-48 object-cover" />
                 <div class="p-4">
-                    <h3 class="font-bold text-xl text-gray-800 mb-2">Refrigerante Cola</h3>
-                    <p class="text-gray-600 mb-4">Refrigerante sabor cola, gelado e refrescante</p>
+                    <h3 class="item-title font-bold text-xl text-gray-800 mb-2">Refrigerante Cola</h3>
+                    <p class="item-description text-gray-600 mb-4">Refrigerante sabor cola, gelado e refrescante</p>
                     <div class="flex items-center justify-between mb-2">
                         <p class="font-bold text-lg text-green-600">R$5,50</p>
                         <div class="flex items-center">
@@ -318,13 +328,13 @@
             <!-- FIM ITEM BEBIDA -->
 
             <!-- ITEM BEBIDA -->
-            <div
-                class="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 focus-within:ring-2 focus-within:ring-blue-500">
+            <div class="item bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 focus-within:ring-2 focus-within:ring-blue-500"
+                data-category="bebidas">
                 <img src="https://images.unsplash.com/photo-1621263764928-df1444c5e859?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
                     alt="Refrigerante Limão" class="w-full h-48 object-cover" />
                 <div class="p-4">
-                    <h3 class="font-bold text-xl text-gray-800 mb-2">Refrigerante Limão</h3>
-                    <p class="text-gray-600 mb-4">Refrigerante sabor limão, gelado e refrescante</p>
+                    <h3 class="item-title font-bold text-xl text-gray-800 mb-2">Refrigerante Limão</h3>
+                    <p class="item-description text-gray-600 mb-4">Refrigerante sabor limão, gelado e refrescante</p>
                     <div class="flex items-center justify-between mb-2">
                         <p class="font-bold text-lg text-green-600">R$5,50</p>
                         <div class="flex items-center">
@@ -349,13 +359,14 @@
             <!-- FIM ITEM BEBIDA -->
 
             <!-- ITEM BEBIDA -->
-            <div
-                class="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 focus-within:ring-2 focus-within:ring-blue-500">
+            <div class="item bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 focus-within:ring-2 focus-within:ring-blue-500"
+                data-category="bebidas">
                 <img src="https://images.unsplash.com/photo-1613478223719-2ab802602423?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80"
                     alt="Suco Natural" class="w-full h-48 object-cover" />
                 <div class="p-4">
-                    <h3 class="font-bold text-xl text-gray-800 mb-2">Suco Natural</h3>
-                    <p class="text-gray-600 mb-4">Suco natural de frutas frescas, sem adição de açúcar</p>
+                    <h3 class="item-title font-bold text-xl text-gray-800 mb-2">Suco Natural</h3>
+                    <p class="item-description text-gray-600 mb-4">Suco natural de frutas frescas, sem adição de açúcar
+                    </p>
                     <div class="flex items-center justify-between mb-2">
                         <p class="font-bold text-lg text-green-600">R$7,50</p>
                         <div class="flex items-center">
@@ -380,13 +391,14 @@
             <!-- FIM ITEM BEBIDA -->
 
             <!-- ITEM BEBIDA -->
-            <div
-                class="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 focus-within:ring-2 focus-within:ring-blue-500">
+            <div class="item bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 focus-within:ring-2 focus-within:ring-blue-500"
+                data-category="bebidas">
                 <img src="https://images.unsplash.com/photo-1586985289071-36f62f55ce44?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                     alt="Milkshake" class="w-full h-48 object-cover" />
                 <div class="p-4">
-                    <h3 class="font-bold text-xl text-gray-800 mb-2">Milkshake</h3>
-                    <p class="text-gray-600 mb-4">Milkshake cremoso nos sabores chocolate, morango ou baunilha</p>
+                    <h3 class="item-title font-bold text-xl text-gray-800 mb-2">Milkshake</h3>
+                    <p class="item-description text-gray-600 mb-4">Milkshake cremoso nos sabores chocolate, morango ou
+                        baunilha</p>
                     <div class="flex items-center justify-between mb-2">
                         <p class="font-bold text-lg text-green-600">R$12,90</p>
                         <div class="flex items-center">
@@ -411,7 +423,7 @@
             <!-- FIM ITEM BEBIDA -->
         </div>
         <!-- FIM GRID BEBIDAS -->
-        <div class="pb-12"></div> 
+        <div class="pb-12"></div>
     </div>
     <!-- FIM CARDÁPIO -->
 

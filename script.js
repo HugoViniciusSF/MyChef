@@ -8,6 +8,10 @@ const closeModalBtn = document.querySelector('#close-modal-btn');
 const cartCounter = document.querySelector('#cart-count');
 const addressInput = document.querySelector('#address');
 const addressWarn = document.querySelector('#address-warn');
+const searchInput = document.querySelector('#search-input');
+const filterButtons = document.querySelectorAll('.category-btn');
+
+let activeCategory = "all";
 
 let cart = [];
 
@@ -194,7 +198,7 @@ checkoutBtn.addEventListener("click", () => {
     }).join("");
 
     const message = encodeURIComponent(cartItems);
-    const phone = "40028922"; 
+    const phone = "40028922";
 
     window.open(`https://wa.me/${phone}?text=${message} Endereço: ${addressInput.value}`, "_blank");
 
@@ -229,4 +233,64 @@ if (isOpen) {
 } else {
     horarioSpan.classList.remove("bg-green-600");
     horarioSpan.classList.add("bg-red-500");
+}
+
+filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        activeCategory = button.getAttribute('data-category');
+
+        filterButtons.forEach(btn => {
+            btn.classList.remove('bg-blue-600', 'text-white');
+            btn.classList.add('bg-gray-200', 'text-gray-800');
+        });
+
+        button.classList.add('bg-blue-600', 'text-white');
+        button.classList.remove('bg-gray-200', 'text-gray-800');
+
+        const searchValue = formatString(searchInput.value);
+        filterItems(searchValue, activeCategory);
+    });
+});
+
+searchInput.addEventListener('input', (event) => {
+    const searchValue = formatString(event.target.value);
+    filterItems(searchValue, activeCategory);
+});
+
+function formatString(value) {
+    return value.toLowerCase()
+        .trim()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "");
+}
+
+function filterItems(searchValue, category) {
+    const items = cardapio.querySelectorAll('.item');
+    const bebidasHeader = document.querySelector('#bebidas-header');
+    let hasBebidas = false;
+
+    items.forEach(item => {
+        const itemTitle = item.querySelector('.item-title');
+        const itemDescription = item.querySelector('.item-description');
+        const itemCategory = item.getAttribute('data-category');
+
+        const matchesSearch = formatString(itemTitle.textContent).includes(searchValue) ||
+            formatString(itemDescription.textContent).includes(searchValue);
+        const matchesCategory = category === 'all' || itemCategory === category;
+
+        if (matchesSearch && matchesCategory) {
+            item.style.display = 'block';
+            if (itemCategory === 'bebidas') {
+                hasBebidas = true;
+            }
+        } else {
+            item.style.display = 'none';
+        }
+    });
+
+    if (!hasBebidas) {
+        bebidasHeader.style.display = 'none';
+    } else {
+        bebidasHeader.style.display = 'block';
+    }
 }
