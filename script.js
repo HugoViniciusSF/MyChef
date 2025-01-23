@@ -113,7 +113,8 @@ function updateCartModal() {
         currency: "BRL"
     });
 
-    cartCounter.textContent = cart.length;
+    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+    cartCounter.textContent = totalItems;
 }
 
 // Remove item cart
